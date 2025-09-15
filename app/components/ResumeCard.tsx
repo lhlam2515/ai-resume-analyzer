@@ -15,7 +15,7 @@ const ResumeCard = ({ resume }: Props) => {
     >
       <div className="resume-card-header">
         <div className="flex flex-col gap-2">
-          <h3 className="text-3xl font-bold break-words text-black max-sm:text-xl">
+          <h3 className="text-xl font-bold break-words text-black sm:text-3xl">
             {companyName}
           </h3>
           <p className="text-lg break-words text-gray-500">{jobTitle}</p>
@@ -30,7 +30,7 @@ const ResumeCard = ({ resume }: Props) => {
           <img
             src={imagePath}
             alt={`Resume for ${jobTitle} at ${companyName}`}
-            className="h-[350px] w-full object-cover object-top max-sm:h-[200px]"
+            className="h-[200px] w-full object-cover object-top sm:h-[350px]"
           />
         </div>
       </div>
