@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
 import { formatSize } from "~/lib/utils";
@@ -12,24 +12,29 @@ const FileUploader = ({
   onFileSelect,
   maxFileSize = 20 * 1024 * 1024,
 }: FileUploaderProps) => {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       const file = acceptedFiles[0] || null;
 
       onFileSelect?.(file);
+      setSelectedFile(file);
     },
     [onFileSelect],
   );
 
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
-    useDropzone({
-      onDrop,
-      multiple: false,
-      accept: { "application/pdf": [".pdf"] },
-      maxSize: maxFileSize,
-    });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    multiple: false,
+    accept: { "application/pdf": [".pdf"] },
+    maxSize: maxFileSize,
+  });
 
-  const file = acceptedFiles[0] || null;
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
+    onFileSelect?.(null);
+  };
 
   return (
     <div className="gradient-border w-full">
@@ -37,7 +42,7 @@ const FileUploader = ({
         <input {...getInputProps()} />
 
         <div className="cursor-pointer space-y-4">
-          {file ? (
+          {selectedFile ? (
             <div
               className="uploader-selected-file"
               onClick={(e) => e.stopPropagation()}
@@ -46,17 +51,14 @@ const FileUploader = ({
               <div className="flex items-center space-x-3">
                 <div>
                   <p className="max-w-xs truncate text-sm font-medium text-gray-700">
-                    {file.name}
+                    {selectedFile.name}
                   </p>
                   <p className="text-sm text-gray-500">
-                    {formatSize(file.size)}
+                    {formatSize(selectedFile.size)}
                   </p>
                 </div>
               </div>
-              <button
-                className="cursor-pointer p-2"
-                onClick={() => onFileSelect?.(null)}
-              >
+              <button className="cursor-pointer p-2" onClick={handleRemoveFile}>
                 <img src="/icons/cross.svg" alt="remove" className="h-4 w-4" />
               </button>
             </div>
