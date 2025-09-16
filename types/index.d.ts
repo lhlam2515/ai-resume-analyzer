@@ -56,3 +56,10 @@ interface Feedback {
     }[];
   };
 }
+
+interface AnalyzePayload {
+  companyName: string;
+  jobTitle: string;
+  jobDescription: string;
+  resume: File;
+}
