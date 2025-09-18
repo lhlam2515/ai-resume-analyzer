@@ -19,35 +19,37 @@
   --color-badge-yellow-text: #73321b;
 }
 
-html,
-body {
-  @apply bg-white;
-}
+@layer base {
+  html,
+  body {
+    @apply bg-white;
+  }
 
-main {
-  @apply min-h-screen pt-10;
-}
-h1 {
-  @apply text-gradient text-[3rem] leading-tight font-semibold sm:text-6xl xl:tracking-[-2px];
-}
+  main {
+    @apply min-h-screen pt-10;
+  }
+  h1 {
+    @apply text-gradient text-[3rem] leading-tight font-semibold sm:text-6xl xl:tracking-[-2px];
+  }
 
-h2 {
-  @apply text-dark-200 text-xl sm:text-3xl;
-}
+  h2 {
+    @apply text-dark-200 text-xl sm:text-3xl;
+  }
 
-label {
-  @apply text-dark-200;
-}
-input {
-  @apply inset-shadow w-full rounded-2xl bg-white p-4 focus:outline-none;
-}
+  label {
+    @apply text-dark-200;
+  }
+  input {
+    @apply inset-shadow w-full rounded-2xl bg-white p-4 focus:outline-none;
+  }
 
-textarea {
-  @apply inset-shadow w-full rounded-2xl bg-white p-4 focus:outline-none;
-}
+  textarea {
+    @apply inset-shadow w-full rounded-2xl bg-white p-4 focus:outline-none;
+  }
 
-form {
-  @apply flex w-full flex-col items-start gap-8;
+  form {
+    @apply flex w-full flex-col items-start gap-8;
+  }
 }
 
 @layer components {
