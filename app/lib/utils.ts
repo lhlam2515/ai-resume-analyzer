@@ -1,3 +1,10 @@
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 export function formatSize(bytes: number): string {
   if (bytes === 0) return "0 Bytes";
 
@@ -12,3 +19,25 @@ export function formatSize(bytes: number): string {
 }
 
 export const generateUUID = () => crypto.randomUUID();
+
+export const getScoreStyle = (score: number) => {
+  let badgeText = "";
+  let badgeColor = "";
+  let textColor = "";
+
+  if (score >= 70) {
+    badgeText = "Strong";
+    badgeColor = "bg-badge-green";
+    textColor = "text-green-600";
+  } else if (score >= 50) {
+    badgeText = "Good Start";
+    badgeColor = "bg-badge-yellow";
+    textColor = "text-yellow-600";
+  } else {
+    badgeText = "Needs Work";
+    badgeColor = "bg-badge-red";
+    textColor = "text-red-600";
+  }
+
+  return { badgeText, badgeColor, textColor };
+};
