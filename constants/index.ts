@@ -91,6 +91,42 @@ export const resumes: Resume[] = [
   },
 ];
 
+export const scoreStyles: { min: number; style: ScoreStyle }[] = [
+  {
+    min: 70,
+    style: {
+      badgeLabel: "Strong",
+      badgeColor: "bg-badge-green",
+      textColor: "text-badge-green-text",
+      labelColor: "text-green-600",
+      bgGradient: "from-green-100",
+      atsIcon: "/icons/ats-good.svg",
+    },
+  },
+  {
+    min: 50,
+    style: {
+      badgeLabel: "Good Start",
+      badgeColor: "bg-badge-yellow",
+      textColor: "text-badge-yellow-text",
+      labelColor: "text-yellow-600",
+      bgGradient: "from-yellow-100",
+      atsIcon: "/icons/ats-warning.svg",
+    },
+  },
+  {
+    min: 0,
+    style: {
+      badgeLabel: "Needs Work",
+      badgeColor: "bg-badge-red",
+      textColor: "text-badge-red-text",
+      labelColor: "text-red-600",
+      bgGradient: "from-red-100",
+      atsIcon: "/icons/ats-bad.svg",
+    },
+  },
+];
+
 export const AIResponseFormat = `
       interface Feedback {
       overallScore: number; //max 100

@@ -63,3 +63,12 @@ interface AnalyzePayload {
   jobDescription: string;
   resume: File;
 }
+
+interface ScoreStyle {
+  badgeLabel: string;
+  badgeColor: string;
+  textColor: string;
+  labelColor: string;
+  bgGradient: string;
+  atsIcon: string;
+}
