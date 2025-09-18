@@ -40,7 +40,16 @@ const ATS = ({ score, suggestions }: ATSProps) => {
               alt="ATS"
               className="h-4 w-4"
             />
-            <p className="text-lg text-gray-500">{suggestion.tip}</p>
+            <p
+              className={cn(
+                "text-lg",
+                suggestion.type === "good"
+                  ? "text-green-700"
+                  : "text-yellow-700",
+              )}
+            >
+              {suggestion.tip}
+            </p>
           </div>
         ))}
         <p className="text-lg text-gray-500">
