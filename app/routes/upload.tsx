@@ -93,6 +93,7 @@ const Upload = () => {
 
     setStatusText("Analysis complete, redirecting...");
     console.log("Analysis complete:", data);
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
