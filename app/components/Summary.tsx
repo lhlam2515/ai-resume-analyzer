@@ -4,7 +4,7 @@ import ScoreGauge from "./ScoreGauge";
 import { getScoreStyle } from "~/lib/utils";
 
 const Category = ({ title, score }: { title: string; score: number }) => {
-  const { textColor } = getScoreStyle(score);
+  const { labelColor } = getScoreStyle(score);
 
   return (
     <div className="resume-summary">
@@ -14,7 +14,7 @@ const Category = ({ title, score }: { title: string; score: number }) => {
           <ScoreBadge score={score} />
         </div>
         <p className="text-2xl">
-          <span className={textColor}>{score}</span>/100
+          <span className={labelColor}>{score}</span>/100
         </p>
       </div>
     </div>
