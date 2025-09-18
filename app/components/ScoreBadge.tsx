@@ -1,11 +1,25 @@
 import { cn, getScoreStyle } from "~/lib/utils";
 
-const ScoreBadge = ({ score }: { score: number }) => {
-  const { badgeColor, textColor, badgeText } = getScoreStyle(score);
+interface ScoreBadgeProps {
+  score: number;
+  variant?: "label" | "score";
+}
+
+export const ScoreBadge = ({ score, variant = "label" }: ScoreBadgeProps) => {
+  const { badgeLabel, badgeColor, textColor, labelColor } =
+    getScoreStyle(score);
+  const scoreIcon = score > 69 ? "/icons/check.svg" : "/icons/warning.svg";
 
   return (
-    <div className={cn("badge", badgeColor)}>
-      <p className={cn("text-xs font-semibold", textColor)}>{badgeText}</p>
+    <div className={cn("score-badge", badgeColor)}>
+      {variant === "label" ? (
+        <p className={cn("text-xs font-semibold", labelColor)}>{badgeLabel}</p>
+      ) : (
+        <>
+          <img src={scoreIcon} alt="score" className="size-4" />
+          <p className={cn("text-sm font-medium", textColor)}>{score}/100</p>
+        </>
+      )}
     </div>
   );
 };

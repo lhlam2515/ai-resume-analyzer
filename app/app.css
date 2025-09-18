@@ -104,7 +104,7 @@
   }
 
   .score-badge {
-    @apply flex flex-row items-center justify-center gap-4 rounded-[96px] px-2 py-1;
+    @apply flex flex-row items-center justify-center gap-1 rounded-[96px] px-2 py-1;
   }
 
   .form-div {
