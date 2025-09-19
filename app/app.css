@@ -29,11 +29,11 @@
     @apply min-h-screen pt-10;
   }
   h1 {
-    @apply text-gradient text-[3rem] leading-tight font-semibold sm:text-6xl xl:tracking-[-2px];
+    @apply text-gradient text-6xl leading-tight font-semibold max-sm:text-[3rem] xl:tracking-[-2px];
   }
 
   h2 {
-    @apply text-dark-200 text-xl sm:text-3xl;
+    @apply text-dark-200 text-3xl max-sm:text-xl;
   }
 
   label {
@@ -75,28 +75,28 @@
     @apply flex flex-row items-center gap-2 rounded-lg border border-gray-200 p-2 shadow-sm;
   }
   .auth-button {
-    @apply primary-gradient w-full cursor-pointer rounded-full px-8 py-4 text-3xl font-semibold text-white md:w-[600px];
+    @apply primary-gradient w-[600px] cursor-pointer rounded-full px-8 py-4 text-3xl font-semibold text-white max-md:w-full;
   }
   .main-section {
-    @apply mx-2 flex flex-col items-center gap-8 pt-12 pb-5 sm:mx-15;
+    @apply mx-15 flex flex-col items-center gap-8 pt-12 pb-5 max-sm:mx-2;
   }
   .page-heading {
     @apply flex max-w-4xl flex-col items-center gap-4 text-center sm:gap-8;
   }
   .resumes-section {
-    @apply flex w-full max-w-[1850px] flex-col items-center gap-4 md:flex-row md:flex-wrap md:justify-evenly md:gap-6;
+    @apply flex w-full max-w-[1850px] flex-wrap items-start justify-evenly gap-6 max-md:flex-col max-md:items-center max-md:gap-4;
   }
 
   .resume-card {
-    @apply flex h-[560px] w-[350px] flex-col gap-8 rounded-2xl bg-white p-4 lg:w-[430px] xl:w-[490px];
+    @apply flex h-[560px] w-[350px] flex-col gap-8 rounded-2xl bg-white p-4 max-sm:h-auto max-sm:max-w-full lg:w-[430px] xl:w-[490px];
   }
 
   .resume-card-header {
-    @apply flex min-h-[110px] flex-col items-center justify-center gap-2 sm:flex-row sm:justify-between;
+    @apply flex min-h-[110px] flex-row items-center justify-between gap-2 max-md:items-center max-md:justify-center max-sm:flex-col;
   }
 
   .feedback-section {
-    @apply flex w-full flex-col gap-8 px-8 py-6 lg:w-1/2;
+    @apply flex w-1/2 flex-col gap-8 px-8 py-6 max-lg:w-full;
   }
 
   .navbar {
@@ -111,7 +111,7 @@
     @apply flex w-full flex-col items-start gap-2;
   }
 
-  .uplader-drag-area {
+  .uploader-drag-area {
     @apply relative min-h-[208px] cursor-pointer rounded-2xl bg-white p-8 text-center transition-all duration-700;
   }
   .uploader-selected-file {
