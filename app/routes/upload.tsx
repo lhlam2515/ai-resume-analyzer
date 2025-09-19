@@ -21,17 +21,17 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const Upload = () => {
-  const { auth, fs, ai, kv } = usePuterStore();
+  const { isLoading, auth, fs, ai, kv } = usePuterStore();
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
   const [file, setFile] = useState<File | null>(null);
 
   useEffect(() => {
-    if (!auth.isAuthenticated) {
+    if (!isLoading && !auth.isAuthenticated) {
       navigate(`/auth?next=/upload`);
     }
-  }, [auth.isAuthenticated]);
+  }, [isLoading, auth.isAuthenticated]);
 
   const handleFileSelect = (file: File | null) => {
     setFile(file);

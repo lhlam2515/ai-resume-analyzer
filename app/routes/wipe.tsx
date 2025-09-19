@@ -14,17 +14,17 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const Wipe = () => {
-  const { auth, fs, kv } = usePuterStore();
+  const { isLoading, auth, fs, kv } = usePuterStore();
   const navigate = useNavigate();
   const [files, setFiles] = useState<FSItem[]>([]);
   const [loadingFiles, setLoadingFiles] = useState(false);
   const [deletingFiles, setDeletingFiles] = useState(false);
 
   useEffect(() => {
-    if (!auth.isAuthenticated) {
+    if (!isLoading && !auth.isAuthenticated) {
       navigate("/auth?next=/wipe");
     }
-  }, [auth.isAuthenticated]);
+  }, [isLoading, auth.isAuthenticated]);
 
   const loadFiles = async () => {
     setLoadingFiles(true);
