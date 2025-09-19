@@ -70,14 +70,23 @@ export default function Home() {
           </div>
         )}
 
-        {!loadingResumes && resumes.length === 0 && (
+        {!loadingResumes && (
           <div className="mt-10 flex flex-col items-center justify-center gap-4">
-            <Link
-              to="/upload"
-              className="primary-button w-fit text-xl font-semibold"
-            >
-              Upload resumes
-            </Link>
+            {resumes.length === 0 ? (
+              <Link
+                to="/upload"
+                className="primary-button w-fit text-xl font-semibold"
+              >
+                Upload resumes
+              </Link>
+            ) : (
+              <Link
+                to="/wipe"
+                className="primary-button w-fit text-xl font-semibold"
+              >
+                Wipe All Data
+              </Link>
+            )}
           </div>
         )}
       </section>
