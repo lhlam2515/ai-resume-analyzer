@@ -3,9 +3,9 @@ import { Link, useNavigate, useParams } from "react-router";
 
 import type { Route } from "./+types/resume";
 
-import Summary from "~/components/Summary";
-import ATS from "~/components/ATS";
-import Details from "~/components/Details";
+import Summary from "~/components/feedback/Summary";
+import ATS from "~/components/feedback/ATS";
+import Details from "~/components/feedback/Details";
 import { usePuterStore } from "~/lib/puter";
 
 export function meta({}: Route.MetaArgs) {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-import ScoreCircle from "./ScoreCircle";
+import ScoreCircle from "~/components/score/ScoreCircle";
 import { usePuterStore } from "~/lib/puter";
 
 interface Props {

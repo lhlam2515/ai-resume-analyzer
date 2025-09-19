@@ -3,8 +3,8 @@ import {
   AccordionContent,
   AccordionHeader,
   AccordionItem,
-} from "./Accordion";
-import ScoreBadge from "./ScoreBadge";
+} from "~/components/Accordion";
+import ScoreBadge from "~/components/score/ScoreBadge";
 
 import { cn } from "~/lib/utils";
 

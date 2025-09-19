@@ -1,4 +1,4 @@
-import FileUploader from "./FileUploader";
+import FileUploader from "~/components/FileUploader";
 
 interface UploadFormProps {
   onFileSelect: (file: File | null) => void;

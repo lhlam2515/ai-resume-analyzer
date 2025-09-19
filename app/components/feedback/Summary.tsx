@@ -1,5 +1,5 @@
-import ScoreBadge from "./ScoreBadge";
-import ScoreGauge from "./ScoreGauge";
+import ScoreBadge from "~/components/score/ScoreBadge";
+import ScoreGauge from "~/components/score/ScoreGauge";
 
 import { getScoreStyle } from "~/lib/utils";
 
