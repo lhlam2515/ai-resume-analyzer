@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="" target="_blank">
+    <a href="https://resumind-arise.vercel.app" target="_blank">
       <img src="public/cover.webp" alt="Project Banner">
     </a>
   <br />
